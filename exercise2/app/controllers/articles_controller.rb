@@ -2,7 +2,8 @@ class ArticlesController < ApplicationController
 before_action :set_author, except: [], if: :params_check
 before_action :set_article, except: [:index]
   def index
-    render json: { articles: @author.articles.map { |e| e.to_builder.attributes! }}
+    articles = @author ? @author.articles : Article.all
+    render json: { articles: articles.map { |e| e.to_builder.attributes! }}
   end
 
   def show
