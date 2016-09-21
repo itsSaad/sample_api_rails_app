@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
 
   private
   def check_request_type!
-    render json: {error: 'request_type not supported.'}, status: 406 unless request.format == :json
+    # render json: {error: 'request_type not supported.'}, status: 406 unless request.format == :json
   end
 end

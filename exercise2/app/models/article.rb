@@ -7,7 +7,7 @@ class Article < ActiveRecord::Base
       a.content content
       a.updated_at updated_at
       a.created_at created_at
-      a.author_id author_id
+      a.author_name author.name
     end
   end
 end
